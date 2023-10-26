@@ -1,11 +1,5 @@
 package org.example;
 
-import net.bytebuddy.ByteBuddy;
-import net.bytebuddy.dynamic.loading.ClassLoadingStrategy;
-import net.bytebuddy.implementation.FixedValue;
-import net.bytebuddy.matcher.ElementMatchers;
-
-import java.lang.reflect.InvocationTargetException;
 import java.util.List;
 
 /**
@@ -14,11 +8,13 @@ import java.util.List;
  */
 public class Main
 {
-  public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException
+  public static void main(String[] args)
   {
-    List<Book> books = BooksGenerator.generate(100);
-    BooksFilter booksFilter = new BooksFilter(books);
-    List<Book> filteredBooks = booksFilter.onlyBooksOlderThan(20);
-    System.out.println(filteredBooks.size());
+//    List<Book> books = BooksGenerator.generate(100);
+//    BooksFilter booksFilter = new BooksFilter(books);
+//    List<Book> filteredBooks = booksFilter.onlyBooksOlderThan(20);
+//    System.out.println(filteredBooks.size());
+
+    JavaAgentController.createUserAndDoSomething();
   }
 }
